@@ -10,7 +10,7 @@ public:
                     int t=nums[j];
                     temp.push_back(t);
                     nums.erase(nums.begin()+j);
-                    solution(nums,sol,temp,n);
+                    solution(nums,sol,temp.insert(t),n);
                     temp.pop_back();
                     nums.insert(nums.begin()+j,t);
                     // temp.pop_back();
@@ -26,7 +26,7 @@ public:
             int t=nums[i];
             temp.push_back(t);
             nums.erase(nums.begin()+i);
-            solution(nums,sol,temp,n);
+            solution(nums,sol,{t},n);
             nums.insert(nums.begin()+i,t);
             temp.pop_back();
         }
