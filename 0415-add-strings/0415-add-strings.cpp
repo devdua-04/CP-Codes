@@ -11,8 +11,8 @@ public:
                 res=to_string(temp)+res;
                 rem=0;
             }else{
-                res=res+to_string(temp%10);
-                rem=1;
+                res=to_string(temp%10)+res;
+                rem=temp/10;
             }
             l1--;
             l2--;
@@ -23,8 +23,8 @@ public:
                 res=to_string(temp)+res;
                 rem=0;
             }else{
-                res=res+to_string(temp%10);
-                rem=1;
+                res=to_string(temp%10)+res;
+                rem=temp/10;
             }
             l1--;
         }
@@ -34,11 +34,12 @@ public:
                 res=to_string(temp)+res;
                 rem=0;
             }else{
-                res=res+to_string(temp%10);
-                rem=1;
+                res=to_string(temp%10)+res;
+                rem=temp/10;
             }
             l2--;
         }
+        if(rem!=0) res=to_string(rem)+res;
         return res;
     }
 };
