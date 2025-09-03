@@ -11,6 +11,6 @@ public:
         return res;
     }
     int gcdOfOddEvenSums(int n) {
-        return gcd(n*n, n*(n+1));/
+        return gcd(n*n, n*(n+1));
     }
 };
