@@ -1,14 +1,22 @@
 class Solution {
 public:
-    vector<vector<int>> generate(int numRows) {
-        vector<vector<int>> result;
-        for (int i = 0; i < numRows; i++) {
-            vector<int> row(i + 1, 1);
-            for (int j = 1; j < i; j++) {
-                row[j] = result[i - 1][j - 1] + result[i - 1][j];
+    vector<vector<int>> generate(int n) {
+        vector<vector<int>> res;
+        vector<int> temp;
+        temp.push_back(1);
+        res.push_back(temp);
+        temp.clear();
+        for(int i=1;i<n;i++){
+            temp.push_back(1);
+            for(int j=1;j<i;j++){
+                temp.push_back(res[i-1][j]+res[i-1][j-1]); 
+                // cout<<i<<j<<endl;  
             }
-            result.push_back(row);
+            // cout<<i<<endl;
+            temp.push_back(1);
+            res.push_back(temp);
+            temp.clear();
         }
-        return result;
+        return res;
     }
 };
